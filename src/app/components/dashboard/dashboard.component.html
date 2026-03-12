@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Dashboard de Empreendimentos</h2>
+  
+  <a routerLink="/novo" class="btn btn-success">Novo Empreendimento</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome do Empreendimento</th>
+        <th>Responsável</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of empreendimentos">
+        <td>{{ item.id }}</td>
+        <td>{{ item.nome_empreendimento }}</td>
+        <td>{{ item.nome_responsavel }}</td>
+        <td>
+          <a [routerLink]="['/editar', item.id]" class="btn btn-primary">Editar</a>
+          <button (click)="deleteEmpreendimento(item.id)" class="btn btn-danger">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

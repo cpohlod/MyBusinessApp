@@ -1,0 +1,14 @@
+{
+  "empreendimentos": [
+    {
+      "id": 1,
+      "nome_empreendimento": "Edifício Mar Azul",
+      "nome_responsavel": "Maria Silva"
+    },
+    {
+      "id": 2,
+      "nome_empreendimento": "Condomínio Serra Verde",
+      "nome_responsavel": "José Santos"
+    }
+  ]
+}
