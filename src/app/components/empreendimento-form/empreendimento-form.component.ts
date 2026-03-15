@@ -27,7 +27,9 @@ export class EmpreendimentoFormComponent implements OnInit {
       nome_empreendimento: ['', [Validators.required, Validators.minLength(3)]],
       nome_responsavel: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      status: ['Ativo', Validators.required]
+      status: ['Ativo', Validators.required],
+      data_cadastro: [{ value: '', disabled: true }],
+      data_atualizacao: [{ value: '', disabled: true }]
     });
   }
 

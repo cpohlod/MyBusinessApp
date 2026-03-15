@@ -9,10 +9,12 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Nome do Empreendimento</th>
+          <th>Empreendimento</th>
           <th>Responsável</th>
           <th>E-mail</th>
           <th>Status</th>
+          <th>Cadastro</th>
+          <th>Atualização</th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -23,6 +25,8 @@
           <td>{{ item.nome_responsavel }}</td>
           <td>{{ item.email }}</td>
           <td>{{ item.status }}</td>
+          <td>{{ item.data_cadastro | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ item.data_atualizacao | date:'dd/MM/yyyy HH:mm' }}</td>
           <td>
             <div class="actions">
               <a [routerLink]="['/editar', item.id]" class="btn btn-primary">Editar</a>
@@ -44,6 +48,8 @@
         <p><strong>Responsável:</strong> {{ item.nome_responsavel }}</p>
         <p><strong>E-mail:</strong> {{ item.email }}</p>
         <p><strong>Status:</strong> <span class="status-badge" [class.inactive]="item.status === 'Inativo'">{{ item.status }}</span></p>
+        <p><strong>Cadastrado em:</strong> {{ item.data_cadastro | date:'dd/MM/yyyy HH:mm' }}</p>
+        <p><strong>Atualizado em:</strong> {{ item.data_atualizacao | date:'dd/MM/yyyy HH:mm' }}</p>
       </div>
       <div class="card-footer">
         <a [routerLink]="['/editar', item.id]" class="btn btn-primary">Editar</a>

@@ -12,8 +12,8 @@ export class EmpreendimentoService {
 
   // Dados mockados para fallback em caso de erro
   private mockData: Empreendimento[] = [
-    { id: 1, nome_empreendimento: 'Mock: Edifício Aurora', nome_responsavel: 'Carlos Oliveira', email: 'carlos@aurora.com', status: 'Ativo' },
-    { id: 2, nome_empreendimento: 'Mock: Solar das Palmeiras', nome_responsavel: 'Ana Costa', email: 'ana@solar.com', status: 'Ativo' }
+    { id: 1, nome_empreendimento: 'Mock: Edifício Aurora', nome_responsavel: 'Carlos Oliveira', email: 'carlos@aurora.com', status: 'Ativo', data_cadastro: new Date().toISOString(), data_atualizacao: new Date().toISOString() },
+    { id: 2, nome_empreendimento: 'Mock: Solar das Palmeiras', nome_responsavel: 'Ana Costa', email: 'ana@solar.com', status: 'Ativo', data_cadastro: new Date().toISOString(), data_atualizacao: new Date().toISOString() }
   ];
 
   constructor(private http: HttpClient) { }
@@ -38,11 +38,14 @@ export class EmpreendimentoService {
   }
 
   createEmpreendimento(empreendimento: Empreendimento): Observable<Empreendimento> {
-    return this.http.post<Empreendimento>(this.apiUrl, empreendimento).pipe(
+    const now = new Date().toISOString();
+    const newItemData = { ...empreendimento, data_cadastro: now, data_atualizacao: now };
+    
+    return this.http.post<Empreendimento>(this.apiUrl, newItemData).pipe(
       catchError(error => {
         console.warn('Erro ao criar na API. Simulando sucesso com mock.', error);
         const newId = Math.max(...this.mockData.map(m => m.id || 0)) + 1;
-        const newItem = { ...empreendimento, id: newId };
+        const newItem = { ...newItemData, id: newId };
         this.mockData.push(newItem);
         return of(newItem);
       })
@@ -50,12 +53,15 @@ export class EmpreendimentoService {
   }
 
   updateEmpreendimento(id: number, empreendimento: Empreendimento): Observable<Empreendimento> {
-    return this.http.put<Empreendimento>(`${this.apiUrl}/${id}`, empreendimento).pipe(
+    const now = new Date().toISOString();
+    const updatedData = { ...empreendimento, data_atualizacao: now };
+
+    return this.http.put<Empreendimento>(`${this.apiUrl}/${id}`, updatedData).pipe(
       catchError(error => {
         console.warn('Erro ao atualizar na API. Simulando sucesso com mock.', error);
         const index = this.mockData.findIndex(m => m.id === id);
-        if (index !== -1) this.mockData[index] = { ...empreendimento, id };
-        return of({ ...empreendimento, id });
+        if (index !== -1) this.mockData[index] = { ...updatedData, id };
+        return of({ ...updatedData, id });
       })
     );
   }

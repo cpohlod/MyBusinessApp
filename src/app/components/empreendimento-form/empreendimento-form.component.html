@@ -38,6 +38,18 @@
       </div>
     </div>
 
+    <div *ngIf="isEditMode" class="readonly-fields">
+      <div class="form-group">
+        <label>Data de Cadastro</label>
+        <div class="readonly-value">{{ form.get('data_cadastro')?.value | date:'dd/MM/yyyy HH:mm' }}</div>
+      </div>
+
+      <div class="form-group">
+        <label>Última Atualização</label>
+        <div class="readonly-value">{{ form.get('data_atualizacao')?.value | date:'dd/MM/yyyy HH:mm' }}</div>
+      </div>
+    </div>
+
     <div class="actions">
       <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Salvar</button>
       <a routerLink="/" class="btn btn-secondary">Cancelar</a>
