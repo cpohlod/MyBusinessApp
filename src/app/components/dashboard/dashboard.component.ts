@@ -18,6 +18,7 @@ import { Empreendimento } from '../../models/empreendimento.model';
     .btn-danger { background-color: #dc3545; color: white; border: none; }
     .btn-success { background-color: #28a745; color: white; border: none; margin-bottom: 20px; display: inline-block; }
     .container { padding: 20px; }
+    .status-inativo { color: #888; }
   `]
 })
 export class DashboardComponent implements OnInit {

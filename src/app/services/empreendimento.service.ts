@@ -12,8 +12,8 @@ export class EmpreendimentoService {
 
   // Dados mockados para fallback em caso de erro
   private mockData: Empreendimento[] = [
-    { id: 1, nome_empreendimento: 'Mock: Edifício Aurora', nome_responsavel: 'Carlos Oliveira' },
-    { id: 2, nome_empreendimento: 'Mock: Solar das Palmeiras', nome_responsavel: 'Ana Costa' }
+    { id: 1, nome_empreendimento: 'Mock: Edifício Aurora', nome_responsavel: 'Carlos Oliveira', email: 'carlos@aurora.com', status: 'Ativo' },
+    { id: 2, nome_empreendimento: 'Mock: Solar das Palmeiras', nome_responsavel: 'Ana Costa', email: 'ana@solar.com', status: 'Ativo' }
   ];
 
   constructor(private http: HttpClient) { }

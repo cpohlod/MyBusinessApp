@@ -3,12 +3,16 @@
     {
       "id": 1,
       "nome_empreendimento": "Edifício Mar Azul",
-      "nome_responsavel": "Maria Silva"
+      "nome_responsavel": "Maria Silva",
+      "email": "maria@marazul.com",
+      "status": "Ativo"
     },
     {
       "id": 2,
       "nome_empreendimento": "Condomínio Serra Verde",
-      "nome_responsavel": "José Santos"
+      "nome_responsavel": "José Santos",
+      "email": "jose@serraverde.com",
+      "status": "Ativo"
     }
   ]
 }
