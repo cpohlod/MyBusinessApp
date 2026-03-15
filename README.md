@@ -54,6 +54,14 @@ ng e2e
 
 Angular CLI does not come with an end-to-endod testing framework by default. You can choose one that suits your needs.
 
+## Responsividade
+
+A listagem de empreendimentos no Dashboard é totalmente responsiva:
+
+- **Desktop (>= 992px):** Exibição em formato de tabela clássica para melhor aproveitamento de telas grandes.
+- **Tablet (768px - 991px):** Exibição em formato de cards dispostos em grade (grid).
+- **Mobile (< 768px):** Exibição em formato de cards empilhados verticalmente para facilitar a leitura em telas estreitas.
+
 ## API Endpoints
 
 A aplicação utiliza um mock backend através do `json-server` (ou similar) no endereço `http://localhost:3000`.
