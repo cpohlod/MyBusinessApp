@@ -96,9 +96,15 @@ A aplicação utiliza um mock backend através do `json-server` (ou similar) no 
   "nome_empreendimento": "String",
   "nome_responsavel": "String",
   "email": "String (validado)",
-  "status": "Ativo | Inativo"
+  "status": "Ativo | Inativo",
+  "data_cadastro": "ISO String (Automático na criação)",
+  "data_atualizacao": "ISO String (Automático na criação e edição)"
 }
 ```
+
+### Comportamento das Datas
+- **Data de Cadastro:** Definida automaticamente com a data/hora atual no momento da criação do registro. Não pode ser alterada manualmente.
+- **Data de Atualização:** Definida inicialmente na criação e atualizada automaticamente para a data/hora atual sempre que qualquer campo do registro for modificado. No formulário de edição, é exibida apenas para consulta.
 
 ## Additional Resources
 
