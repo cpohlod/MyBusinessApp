@@ -11,14 +11,26 @@ import { Empreendimento } from '../../models/empreendimento.model';
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './empreendimento-form.component.html',
   styles: [`
-    .container { padding: 20px; max-width: 600px; margin: auto; }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 5px; }
-    input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-    .btn { padding: 10px 20px; cursor: pointer; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; }
-    .btn-primary { background-color: #007bff; color: white; border: none; }
-    .btn-secondary { background-color: #6c757d; color: white; border: none; }
-    .error { color: #dc3545; font-size: 12px; margin-top: 5px; }
+    .container { padding: 20px; max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; color: #333; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+    input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; }
+    input:focus, select:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 2px rgba(0,123,255,0.25); }
+    .actions { display: flex; gap: 12px; margin-top: 30px; }
+    .btn { padding: 12px 24px; cursor: pointer; border-radius: 4px; text-decoration: none; font-size: 16px; text-align: center; border: none; flex: 1; transition: background-color 0.2s; }
+    .btn-primary { background-color: #007bff; color: white; }
+    .btn-primary:hover:not(:disabled) { background-color: #0056b3; }
+    .btn-primary:disabled { background-color: #ccc; cursor: not-allowed; }
+    .btn-secondary { background-color: #6c757d; color: white; }
+    .btn-secondary:hover { background-color: #5a6268; }
+    .error { color: #dc3545; font-size: 14px; margin-top: 6px; }
+
+    @media (max-width: 576px) {
+      .container { margin: 20px; padding: 15px; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; margin-right: 0; }
+    }
   `]
 })
 export class EmpreendimentoFormComponent implements OnInit {

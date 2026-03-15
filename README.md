@@ -56,11 +56,16 @@ Angular CLI does not come with an end-to-endod testing framework by default. You
 
 ## Responsividade
 
-A listagem de empreendimentos no Dashboard é totalmente responsiva:
+A aplicação é totalmente responsiva, adaptando-se a diferentes tamanhos de tela:
 
+### Listagem de Empreendimentos (Dashboard)
 - **Desktop (>= 992px):** Exibição em formato de tabela clássica para melhor aproveitamento de telas grandes.
 - **Tablet (768px - 991px):** Exibição em formato de cards dispostos em grade (grid).
 - **Mobile (< 768px):** Exibição em formato de cards empilhados verticalmente para facilitar a leitura em telas estreitas.
+
+### Formulários (Criação e Edição)
+- **Desktop:** Container centralizado com largura máxima de 600px para foco na tarefa.
+- **Mobile (< 576px):** Layout adaptado para ocupar a largura total da tela, com botões de ação empilhados verticalmente para facilitar o toque e preenchimento.
 
 ## Loader Global
 
