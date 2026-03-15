@@ -44,6 +44,14 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
+### Cobertura de Testes de Interface
+A aplicação conta com testes unitários robustos para os principais componentes:
+- **DashboardComponent:** Verifica o carregamento de dados, renderização de tabela/cards e ações de exclusão.
+- **EmpreendimentoFormComponent:** Valida regras de formulário (campos obrigatórios, e-mail, tamanho mínimo), inicialização de dados e submissão de novos registros/edições.
+- **AppComponent:** Garante a integridade estrutural básica da aplicação.
+
+Para rodar os testes em modo único (CI): `npm test -- --watch=false --browsers=ChromeHeadless`
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:
