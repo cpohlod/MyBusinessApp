@@ -95,14 +95,16 @@ A aplicação utiliza um mock backend através do `json-server` (ou similar) no 
   "id": 1,
   "nome_empreendimento": "String",
   "nome_responsavel": "String",
-  "email": "String (validado)",
-  "status": "Ativo | Inativo",
+  "email": "String (Obrigatório, formato válido)",
+  "status": "Ativo | Inativo (Obrigatório)",
   "data_cadastro": "ISO String (Automático na criação)",
   "data_atualizacao": "ISO String (Automático na criação e edição)"
 }
 ```
 
-### Comportamento das Datas
+### Regras de Negócio e Validação
+- **E-mail:** Campo de preenchimento obrigatório que deve seguir um formato de e-mail válido (ex: usuario@dominio.com).
+- **Status:** Campo obrigatório que define a situação do empreendimento, permitindo apenas os valores "Ativo" ou "Inativo". O valor padrão para novos registros é "Ativo".
 - **Data de Cadastro:** Definida automaticamente com a data/hora atual no momento da criação do registro. Não pode ser alterada manualmente.
 - **Data de Atualização:** Definida inicialmente na criação e atualizada automaticamente para a data/hora atual sempre que qualquer campo do registro for modificado. No formulário de edição, é exibida apenas para consulta.
 
