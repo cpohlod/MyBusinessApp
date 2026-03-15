@@ -62,6 +62,13 @@ A listagem de empreendimentos no Dashboard é totalmente responsiva:
 - **Tablet (768px - 991px):** Exibição em formato de cards dispostos em grade (grid).
 - **Mobile (< 768px):** Exibição em formato de cards empilhados verticalmente para facilitar a leitura em telas estreitas.
 
+## Loader Global
+
+A aplicação possui um sistema de loader (spinner) global que:
+- É ativado automaticamente em qualquer requisição HTTP (via `HttpInterceptor`).
+- Bloqueia a interação do usuário com uma sobreposição (overlay) semi-transparente durante o processamento.
+- Gerencia múltiplas requisições simultâneas, fechando apenas quando todas forem concluídas.
+
 ## API Endpoints
 
 A aplicação utiliza um mock backend através do `json-server` (ou similar) no endereço `http://localhost:3000`.
